@@ -1,0 +1,20 @@
+#!/usr/bin/env node
+var debug = require('debug')('react-ex3');
+var mongoose = require('mongoose');
+
+mongoose.connect('mongodb://test:test@localhost/test');
+
+(function (conn) {
+    conn.on('error', debug.bind(null, 'Failed to connect to db: '));
+    conn.once('open', function () {
+        debug('Successfully connected to db');
+
+        var app = require('../src/server/app');
+
+        app.set('port', process.env.PORT || 3000);
+
+        var server = app.listen(app.get('port'), function() {
+          debug('Express server listening on port ' + server.address().port);
+        });
+    });
+})(mongoose.connection);

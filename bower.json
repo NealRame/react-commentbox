@@ -1,0 +1,23 @@
+{
+  "name": "react-commentbox",
+  "authors": [
+    "NealRame <contact@nealrame.com>"
+  ],
+  "moduleType": [
+    "amd"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "react": "~0.10.0",
+    "jquery": "~2.1.1",
+    "showdown": "~0.3.1"
+  }
+}
